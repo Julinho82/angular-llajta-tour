@@ -1,0 +1,32 @@
+<h3 align="center">Registrar Cliente</h3>
+<table align="center" border="1" color=blue>
+    <div>
+        <form align="center" [formGroup]="form" (submit)="crearCliente()">
+
+            <br>
+            <label for="nombre"><b>Nombre: </b></label>
+            <input type="text" required formControlName="nombre">
+            <br>
+            <br>
+            <label for="apellidos"><b>Apellidos: </b></label>
+            <input type="text" required formControlName="apellidos">
+            <br>
+            <br>
+            <label for="direccion"><b>Direccion: </b></label>
+            <input type="text" required formControlName="direccion">
+            <br>
+            <br>
+            <label for="ci"><b>Carnet: </b></label>
+            <input type="text" required formControlName="ci">
+            <br>
+            <br>
+            <label for="telefono"><b>Telefono: </b></label>
+            <input type="text" required formControlName="telefono">
+            <br>
+            <br>
+
+
+            <input type="submit" value="Aceptar" [disabled]="form.invalid">
+        </form>
+    </div>
+</table>

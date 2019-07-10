@@ -1,0 +1,16 @@
+<p>
+
+    <b>Nombre: </b> {{cliente.nombre }}
+    <br>
+    <b>Apellidos: </b>{{cliente.apellidos}}
+    <br>
+    <b>CI: </b> {{cliente.ci}}
+    <br>
+    <b>Direccion: </b>{{cliente.direccion}}
+    <br>
+    <b>Telefono: </b>{{cliente.telefono}}
+    <br>
+    <button [routerLink]="['/clientes/detalle',cliente.id]">Ver</button>&nbsp;
+    <button [routerLink]="['/clientes/editar',cliente.id]">Editar</button>&nbsp;
+    <button [routerLink]="['/clientes/eliminar',cliente.id]">Eliminar</button>
+</p>

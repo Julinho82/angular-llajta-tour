@@ -1,0 +1,31 @@
+<br>
+<table align="center" border="1" *ngIf="paquete">
+    <div>
+        <form align="center" [formGroup]="form" (submit)="actualizaPaquete()">
+      
+            <label for="destino"><b>Destino: </b></label>
+            <input type="text" formControlName="destino">
+            <br>
+            <br>
+            <label for="descripcion"><b>Descripcion: </b></label>
+            <input type="text" formControlName="descripcion">
+            <br>
+            <br>
+            <label for="precio"><b>Precio: </b></label>
+            <input type="text" formControlName="precio">  
+            <br>
+            <br>
+            <label for="guia"><b>Guia: </b></label>
+            <input type="text" formControlName="guia">
+            <br>
+            <br>
+            <label for="fechaPartida"><b>Fecha Partida: </b></label>
+            <input type="date"  formControlName="fechaPartida" >
+            <br>
+            <br>
+
+            <input type="submit" value="Aceptar">
+        </form>
+    </div>
+
+</table>

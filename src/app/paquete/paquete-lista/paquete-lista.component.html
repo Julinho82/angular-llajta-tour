@@ -1,0 +1,13 @@
+<h2 align="center" [innerHtml]="titulo"></h2>
+<!--<button routerLink="/paquetes/crear" type="button">Crear Paquete</button>
+<br>
+<br>
+<form action="">
+    <label>Buscar:</label>&nbsp;
+    <input type="text" name="buscar" [(ngModel)]="elementoBusqueda">
+    <hr>
+    <button (click)="buscarElementos()">Aceptar</button>
+</form>
+-->
+
+<app-paquete-item *ngFor="let lugar of lugares" [paquete]="lugar"></app-paquete-item>

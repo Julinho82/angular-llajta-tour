@@ -1,0 +1,37 @@
+<br>
+<table align="center" border="1" >
+    <div>
+        <form align="center" [formGroup]="form" (submit)="crearPaquete()">
+
+            <br>
+            <label for="destino"><b>Destino: </b></label>
+            <input type="text" required formControlName="destino">
+            <br>
+            <br>
+            <label for="descripcion"><b>Descripcion: </b></label>
+            <input type="text" required formControlName="descripcion">
+            <br>
+            <br>
+            <label for="precio"><b>Precio: </b></label>
+            <input type="text" required formControlName="precio">
+            <br>
+            <br>
+            <label for="guia"><b>Guia: </b></label>
+            <input type="text" required formControlName="guia">
+            <br>
+            <br>
+            <label for="fecha"><b>Fecha Partida: </b></label>
+            <input type="date" required formControlName="fechaPartida">
+            <br>
+            <br>
+
+            <button (click)="reiniciarForm()" type="button"> Reinicar</button> &nbsp;
+            <input type="submit" value="Aceptar" [disabled]="form.invalid">
+        </form>
+    </div>
+    <div align="center">
+        <br>
+        <button routerLink="/paquetes/lista" type="button">Listar Clientes</button>
+    </div>
+</table>
+

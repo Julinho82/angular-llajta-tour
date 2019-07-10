@@ -1,0 +1,19 @@
+<p>
+    <b>ID: </b> {{ paquete.id }}
+    <br>
+    <b>Destino: </b> {{ paquete.destino }}
+    <br>
+    <b> Fecha Salida: </b> {{paquete.fechaPartida}}
+    <br>
+    <b>Precio:</b> {{paquete.precio}}
+    <br>
+    <b>Guia: </b> {{paquete.guia}}
+    <br>
+    <b>Descripcion: </b> {{paquete.descripcion}}
+    <br>
+    <br>
+    <button [routerLink]="['/paquetes/detalle',paquete.id]">Ver</button>&nbsp;
+    <button [routerLink]="['/paquetes/editar',paquete.id]">Editar</button>&nbsp;
+    <button [routerLink]="['/paquetes/eliminar',paquete.id]">Eliminar</button>
+
+</p>

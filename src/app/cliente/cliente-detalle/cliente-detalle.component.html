@@ -1,0 +1,41 @@
+<h3 align="center">Ver Detalle</h3>
+
+<table align="center" *ngIf="cliente" border=1>
+    <!--
+        true
+        false
+        1 true
+        >1 true
+        0 false
+        <0 flase
+        undifiened false
+        objeto true
+    -->
+    <div>
+        <br>
+        <tr align="center">
+            <strong>Nombre:</strong>
+            <td>{{cliente.nombre}}</td>
+        </tr>
+        <tr align="center">
+            <strong>Apellidos:</strong>
+            <td>{{cliente.apellidos}}</td>
+        </tr>
+        <tr align="center">
+            <strong>Ci:</strong>
+            <td>{{cliente.ci}}</td>
+        </tr>
+        <tr align="center"> 
+            <strong>Direccion:</strong>
+            <td>{{cliente.direccion|uppercase}}</td>
+        </tr>
+        <tr align="center"> 
+            <strong>Telefono:</strong>
+            <td>{{cliente.telefono}}</td>
+        </tr>
+    </div>
+    <br>
+    <div align="center">
+        <button type="button" routerLink="/clientes/listar">Volver</button>
+    </div>
+</table>
