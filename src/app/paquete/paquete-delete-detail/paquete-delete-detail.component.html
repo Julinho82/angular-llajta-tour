@@ -1,0 +1,46 @@
+<h3 align="center">Eliminar Detalle</h3>
+
+<table align="center" *ngIf="paquete" border=1>
+    <!--
+        true
+        false
+        1 true
+        >1 true
+        0 false
+        <0 flase
+        undifiened false
+        objeto true
+    -->
+    <div>
+        <br>
+        <tr align="center">
+            <strong>Destino:</strong>
+            <td>{{paquete.destino|uppercase}}</td>
+        </tr>
+        <tr align="center">
+            <strong>Descripcion:</strong>
+            <td>{{paquete.descripcion}}</td>
+        </tr>
+        <tr align="center">
+            <strong>Precio:</strong>
+            <td>{{paquete.precio}}</td>
+        </tr>
+        <tr align="center"> 
+            <strong>Fecha Partida:</strong>
+            <td>{{paquete.fechaPartida|date:'medium'}}</td>
+        </tr>
+        <tr align="center"> 
+            <strong>Guia:</strong>
+            <td>{{paquete.guia|lowercase}}</td>
+        </tr>
+    </div>
+    <br>
+    
+    <div align="center">
+        <b>Esta Seguro que desea Eliminar este paquete</b>
+        <br>
+        <br>
+        <button type="button" [routerLink]="['/paquetes/eliminar',paquete.id]" (click)="eliminaPaquete()">Aceptar</button>&nbsp;
+        <button type="button" routerLink="/paquetes/lista">Cancelar</button>&nbsp;
+    </div>
+</table>

@@ -25,7 +25,7 @@ export class PaqueteEditComponent implements OnInit {
   ) {
     this.form = this.fBuilder.group(
       {
-        id: [undefined],
+        id: ["",[]],
         destino: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
         descripcion: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
         precio: [0, [Validators.required, Validators.min(10), Validators.max(100000)]],
@@ -48,6 +48,7 @@ export class PaqueteEditComponent implements OnInit {
               this.paquete = respuesta;
               this.form.setValue(respuesta);
               console.log('Formulario recuperado: ',this.form.value);
+  
 
             },
             (error) => {

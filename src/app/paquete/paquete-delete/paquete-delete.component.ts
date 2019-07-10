@@ -20,23 +20,7 @@ export class PaqueteDeleteComponent implements OnInit {
 
   ngOnInit() {
 
-    this.activatedroute.params
-    .subscribe(
-      (params)=>{
-        this.paqueteservice.eliminarPorId(params.id)
-        .subscribe(
-          (eliminaId)=>{
-            console.log('Elimino ID servicio',eliminaId)
-          },
-          (error)=>{
-            console.log('Error eliminar ID',error)
-          }
-        )
-      },
-    (error)=>{
-      console.log('Error Params',error);
-    }
-    );
+    
   }
 
 }

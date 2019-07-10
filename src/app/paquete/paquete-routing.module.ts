@@ -6,6 +6,7 @@ import { PaqueteEditComponent } from './paquete-edit/paquete-edit.component';
 import { PaqueteDeleteComponent } from './paquete-delete/paquete-delete.component';
 import { PaqueteItemComponent } from './paquete-item/paquete-item.component';
 import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
+import { PaqueteDeleteDetailComponent } from './paquete-delete-detail/paquete-delete-detail.component';
 
 //LazyRouting por modulo
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:'detalle/:id',
     component:PaqueteDetalleComponent
+  },
+  {
+    path:'eliminar_detalle/:id',
+    component:PaqueteDeleteDetailComponent
   }
 ];
 
