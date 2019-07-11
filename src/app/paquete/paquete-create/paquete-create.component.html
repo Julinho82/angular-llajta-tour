@@ -1,5 +1,5 @@
-<br>
-<table align="center" border="1" >
+<!--<br>
+<table align="center" border="1">
     <div>
         <form align="center" [formGroup]="form" (submit)="crearPaquete()">
 
@@ -25,13 +25,53 @@
             <br>
             <br>
 
-            <button (click)="reiniciarForm()" type="button"> Reinicar</button> &nbsp;
-            <input type="submit" value="Aceptar" [disabled]="form.invalid">
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
+
         </form>
+
     </div>
     <div align="center">
         <br>
         <button routerLink="/paquetes/lista" type="button">Listar Clientes</button>
+        <button (click)="reiniciarForm()" type="button"> Reinicar</button> &nbsp;
     </div>
-</table>
+</table>-->
 
+
+
+<form align="center" [formGroup]="form" (submit)="crearPaquete()" border="1">
+    <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Destino" required formControlName="destino"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Descripcion" required formControlName="descripcion"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Precio" required formControlName="precio"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Guia" required formControlName="guia" type="date"></textarea>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" formControlName="fechaPartida" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
+</form>
+
+<br>
+<div align="center">
+    <button mat-raised-button color="primary" routerLink="/paquetes/lista">Listar Paquetes</button>
+    <br>
+    <br>
+    <button mat-raised-button color="primary" (click)="reiniciarForm()">Reiniciar Formulario</button>
+</div>
