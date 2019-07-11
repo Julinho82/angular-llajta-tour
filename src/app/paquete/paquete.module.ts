@@ -11,15 +11,9 @@ import { PaqueteDeleteComponent } from './paquete-delete/paquete-delete.componen
 import { PaqueteItemComponent } from './paquete-item/paquete-item.component';
 import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
 import { PaqueteDeleteDetailComponent } from './paquete-delete-detail/paquete-delete-detail.component';
+import { MaterialModule } from '../material/material.module';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [PaqueteListaComponent, PaqueteCreateComponent, PaqueteEditComponent, PaqueteDeleteComponent, PaqueteItemComponent, PaqueteDetalleComponent, PaqueteDeleteDetailComponent],
@@ -28,14 +22,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     PaqueteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    MaterialModule
+    
   
   ]
 })
