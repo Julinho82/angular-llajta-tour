@@ -12,13 +12,20 @@ import { PaqueteItemComponent } from './paquete-item/paquete-item.component';
 import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
 import { PaqueteDeleteDetailComponent } from './paquete-delete-detail/paquete-delete-detail.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [PaqueteListaComponent, PaqueteCreateComponent, PaqueteEditComponent, PaqueteDeleteComponent, PaqueteItemComponent, PaqueteDetalleComponent, PaqueteDeleteDetailComponent],
   imports: [
     CommonModule,
     PaqueteRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule
   
   ]
 })

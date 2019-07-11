@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<!--<html>
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,4 +58,27 @@
 
 </body>
 
-</html>
+</html>-->
+
+<mat-toolbar color="secundary">
+
+  <mat-toolbar-row>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item routerLink="/paquetes/lista">Lista Paquetes</button>
+      <button mat-menu-item routerLink="/clientes/listar">Lista Clientes</button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <span>LLAJTA TOUR</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>
