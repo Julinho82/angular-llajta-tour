@@ -65,7 +65,7 @@
     <mat-form-field>
         <input matInput [matDatepicker]="picker" formControlName="fechaPartida" placeholder="Choose a date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker (closed)="verificarCierre()"></mat-datepicker>
     </mat-form-field>
     <br>
 

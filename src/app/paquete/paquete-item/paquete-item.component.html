@@ -1,5 +1,5 @@
 
-        <mat-card>
+        <mat-card (click)="mandarMensaje()"> 
             <mat-card-content>
                 <b>ID: </b> {{ paquete.id }}
                 <br>
@@ -12,9 +12,8 @@
                 <b>Guia: </b> {{paquete.guia}}
                 <br>
                 <b>Descripcion: </b> {{paquete.descripcion}}
-                <br>
-                <br>
-                <b>Imagen: </b> {{paquete.img_url}}
+
+
             </mat-card-content>
             <mat-card-actions>
                 <button mat-raised-button color="primary" [routerLink]="['/paquetes/detalle',paquete.id]">Ver</button>

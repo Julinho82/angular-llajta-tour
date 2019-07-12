@@ -33,7 +33,7 @@ export class PaqueteCreateComponent implements OnInit {
         precio: [10, [Validators.required, Validators.min(10), Validators.max(100000)]],
         guia: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
         fechaPartida: ["", [Validators.required]],
-        img_ur:["",[Validators.required]]
+        img_url:["",[Validators.required]]
       }
     )
 
@@ -89,5 +89,7 @@ export class PaqueteCreateComponent implements OnInit {
     this.form.reset();
   }
 
- 
+  verificarCierre():void{
+    console.log('El date picker se cerro');
+  }
 }

@@ -3,6 +3,7 @@ import { Paquete } from "../../shared/models/Paquete";
 import { PaqueteService } from '../../shared/services/paquete.service';
 
 
+
 @Component({
   selector: 'app-paquete-lista',
   templateUrl: './paquete-lista.component.html',
@@ -16,6 +17,8 @@ export class PaqueteListaComponent implements OnInit {
 
   elementoBusqueda: string;
 
+  imagen_url: string; 
+
   /* boton: string;
  
    departamento: string;*/
@@ -24,6 +27,7 @@ export class PaqueteListaComponent implements OnInit {
 
     /*this.boton="'Accion del boton Ver info'";*/
      this.titulo='Nuestros Destinos';
+     this.imagen_url="";
     /*this.lugares=["Cristo","Pairumani","Corani"];*/
     /* this.lugares=[
        {
@@ -102,5 +106,10 @@ export class PaqueteListaComponent implements OnInit {
   buscarElementos(): void {
 
     console.log(this.elementoBusqueda)
+  }
+  myMethodo(event):void{
+
+    this.imagen_url=event;
+
   }
 }

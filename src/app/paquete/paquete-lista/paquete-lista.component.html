@@ -11,9 +11,12 @@
     <hr>
     <button (click)="buscarElementos()">Aceptar</button>
 </form>
+<hr>
+<img [src]="imagen_url" alt="Imagen no encontrada" height="100px">
+<br>
 
-<mat-grid-list  cols="2" rowHeight="250px">
+<mat-grid-list cols="2" rowHeight="250px">
     <mat-grid-tile *ngFor="let lugar of lugares">
-            <app-paquete-item [paquete]="lugar" ></app-paquete-item>
+        <app-paquete-item [paquete]="lugar" (onOver)="myMethodo($event)"></app-paquete-item>
     </mat-grid-tile>
 </mat-grid-list>

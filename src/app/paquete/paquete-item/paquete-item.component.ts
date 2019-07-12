@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Paquete } from "../../shared/models/paquete";
+
 
 
 
@@ -15,10 +16,14 @@ export class PaqueteItemComponent implements OnInit {
   @Input()//Atributo recibe información desde afuera
   paquete: Paquete;
 
+  @Output()
+  onOver : EventEmitter<string>;
 
 
 
   constructor() { 
+
+    this.onOver=new EventEmitter();
 
 
   }
@@ -26,5 +31,13 @@ export class PaqueteItemComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  mandarMensaje():void{
+    console.log('quiero enviar al URL de la imagen');
+    console.log(this.paquete.img_url);
+    this.onOver.emit(this.paquete.img_url);
+    //console.log(this.onOver.emit(this.paquete.img_url));
+  }
+ 
 
 }
