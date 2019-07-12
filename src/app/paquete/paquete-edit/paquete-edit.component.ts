@@ -30,7 +30,8 @@ export class PaqueteEditComponent implements OnInit {
         descripcion: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
         precio: [0, [Validators.required, Validators.min(10), Validators.max(100000)]],
         guia: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
-        fechaPartida: ["", [Validators.required]]
+        fechaPartida: ["", [Validators.required]],
+        imr_url:["",[Validators.required]]
       }
     )
 

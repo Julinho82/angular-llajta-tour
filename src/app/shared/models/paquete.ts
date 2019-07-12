@@ -7,6 +7,7 @@ export class Paquete {
     fechaPartida: string;
     guia: string;
     descripcion: string;
+    img_url: string;
 
     //interaccion entre componentes padre e hijo ejemplo paquete item
 
