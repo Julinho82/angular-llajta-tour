@@ -1,4 +1,6 @@
-<h2 align="center" [innerHtml]="titulo"></h2>
+<!--<h2 align="center" [innerHtml]="titulo"></h2>-->
+
+<mat-card-title align="center" color="pink">{{titulo}}</mat-card-title>
 
 <button mat-raised-button color="primary" routerLink="/paquetes/crear">Crear Paquetes</button>
 <br>
@@ -10,5 +12,8 @@
     <button (click)="buscarElementos()">Aceptar</button>
 </form>
 
-
-<app-paquete-item *ngFor="let lugar of lugares" [paquete]="lugar"></app-paquete-item>
+<mat-grid-list  cols="2" rowHeight="250px">
+    <mat-grid-tile *ngFor="let lugar of lugares">
+            <app-paquete-item [paquete]="lugar" ></app-paquete-item>
+    </mat-grid-tile>
+</mat-grid-list>
