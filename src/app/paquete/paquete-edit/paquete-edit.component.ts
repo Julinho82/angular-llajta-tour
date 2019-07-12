@@ -25,13 +25,13 @@ export class PaqueteEditComponent implements OnInit {
   ) {
     this.form = this.fBuilder.group(
       {
-        id: ["",[]],
+        id: ["", []],
         destino: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
         descripcion: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
         precio: [0, [Validators.required, Validators.min(10), Validators.max(100000)]],
         guia: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
         fechaPartida: ["", [Validators.required]],
-        img_url:["",[Validators.required]]
+        img_url: ["", [Validators.required]]
       }
     )
 
@@ -48,8 +48,8 @@ export class PaqueteEditComponent implements OnInit {
               console.log('JSON recuperado', respuesta);
               this.paquete = respuesta;
               this.form.setValue(respuesta);
-              console.log('Formulario recuperado: ',this.form.value);
-  
+              console.log('Formulario recuperado: ', this.form.value);
+
 
             },
             (error) => {
@@ -75,7 +75,7 @@ export class PaqueteEditComponent implements OnInit {
         //exito
         (respuesta) => {
           //redireccionar a Listar paquete si se creo paquete
-          this.routes.navigate(['paquetes','lista']);
+          this.routes.navigate(['paquetes', 'lista']);
 
           //Consola de respuesta
           console.log('Se actualizaron los campos: ', respuesta);
