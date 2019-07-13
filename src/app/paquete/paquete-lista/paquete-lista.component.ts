@@ -15,6 +15,8 @@ export class PaqueteListaComponent implements OnInit {
 
   lugares: Paquete[];
 
+  lugaresBusqueda: Paquete[];
+
   elementoBusqueda: string;
 
   imagen_url: string; 
@@ -27,7 +29,7 @@ export class PaqueteListaComponent implements OnInit {
 
     /*this.boton="'Accion del boton Ver info'";*/
      this.titulo='Nuestros Destinos';
-     this.imagen_url="";
+
     /*this.lugares=["Cristo","Pairumani","Corani"];*/
     /* this.lugares=[
        {
@@ -78,7 +80,8 @@ export class PaqueteListaComponent implements OnInit {
 
     this.elementoBusqueda = 'Ingrese su búsqueda';
     this.lugares = [];
-    
+    this.lugaresBusqueda=[];
+    this.imagen_url="";
   }
 
   ngOnInit() {
@@ -88,6 +91,7 @@ export class PaqueteListaComponent implements OnInit {
         (respuesta) => {
           console.log('Respuesta del Servidor', respuesta);
           this.lugares = respuesta;
+          this.lugaresBusqueda=respuesta;
         },
         (error) => {
           console.log('Error en el servidor', error);
@@ -105,11 +109,19 @@ export class PaqueteListaComponent implements OnInit {
 
   buscarElementos(): void {
 
-    console.log(this.elementoBusqueda)
+    this.lugaresBusqueda=this.lugares.filter(
+      (paquteLugar)=>{
+        return paquteLugar.destino.includes(this.elementoBusqueda);
+      }
+    );
+
+
+ 
   }
   myMethodo(event):void{
 
     this.imagen_url=event;
 
   }
+
 }

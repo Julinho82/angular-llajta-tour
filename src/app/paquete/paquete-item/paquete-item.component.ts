@@ -16,6 +16,8 @@ export class PaqueteItemComponent implements OnInit {
   @Input()//Atributo recibe información desde afuera
   paquete: Paquete;
 
+  imagen_url: string; 
+
   @Output()
   onOver : EventEmitter<string>;
 
@@ -24,6 +26,7 @@ export class PaqueteItemComponent implements OnInit {
   constructor() { 
 
     this.onOver=new EventEmitter();
+    this.imagen_url="";
 
 
   }
@@ -33,11 +36,12 @@ export class PaqueteItemComponent implements OnInit {
   }
 
   mandarMensaje():void{
-    console.log('quiero enviar al URL de la imagen');
-    console.log(this.paquete.img_url);
+    //console.log('quiero enviar al URL de la imagen desde Card');
+    //console.log(this.paquete.img_url);
     this.onOver.emit(this.paquete.img_url);
     //console.log(this.onOver.emit(this.paquete.img_url));
   }
+
  
 
 }

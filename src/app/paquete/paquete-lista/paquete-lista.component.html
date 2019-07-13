@@ -2,21 +2,34 @@
 
 <mat-card-title align="center" color="pink">{{titulo}}</mat-card-title>
 
-<button mat-raised-button color="primary" routerLink="/paquetes/crear">Crear Paquetes</button>
+
 <br>
 <br>
-<form action="">
+<!--<form action="">
     <label>Buscar:</label>&nbsp;
-    <input type="text" name="buscar" [(ngModel)]="elementoBusqueda">
+    <input type="text" name="buscar" [(ngModel)]="elementoBusqueda" (ngModelChange)="buscarElementos()">
     <hr>
     <button (click)="buscarElementos()">Aceptar</button>
-</form>
-<hr>
-<img [src]="imagen_url" alt="Imagen no encontrada" height="100px">
-<br>
+</form>-->
+<mat-card>
+    <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Busca Paquetes" [(ngModel)]="elementoBusqueda"
+            (ngModelChange)="buscarElementos()">
+        <button mat-button *ngIf="elementoBusqueda" matSuffix mat-icon-button aria-label="Clear"
+            (click)="elementoBusqueda=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" routerLink="/paquetes/crear">Crear Paquetes</button>
+</mat-card>
+
+<mat-card>
+    <img [src]="imagen_url" alt="" height="100px">
+</mat-card>
 
 <mat-grid-list cols="2" rowHeight="250px">
-    <mat-grid-tile *ngFor="let lugar of lugares">
+    <mat-grid-tile *ngFor="let lugar of lugaresBusqueda">
         <app-paquete-item [paquete]="lugar" (onOver)="myMethodo($event)"></app-paquete-item>
     </mat-grid-tile>
 </mat-grid-list>
