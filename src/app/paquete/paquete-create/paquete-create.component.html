@@ -37,45 +37,51 @@
     </div>
 </table>-->
 
+<mat-grid-list cols="1">
+    <mat-card>
+        <mat-card-title align="center">Registro Paquetes</mat-card-title>
+        <mat-card-content>
+            <form align="center" [formGroup]="form" (submit)="crearPaquete()" border="1">
+                <br>
+                <mat-form-field>
+                    <textarea matInput placeholder="Destino" required formControlName="destino"></textarea>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <textarea matInput placeholder="Descripcion" required formControlName="descripcion"></textarea>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <textarea matInput placeholder="Precio" required formControlName="precio"></textarea>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <textarea matInput placeholder="Guia" required formControlName="guia" type="date"></textarea>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <textarea matInput placeholder="Imagen" required formControlName="img_url"></textarea>
+                </mat-form-field>
+                <br>
 
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" formControlName="fechaPartida" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker (closed)="verificarCierre()"></mat-datepicker>
+                </mat-form-field>
+                <br>
 
-<form align="center" [formGroup]="form" (submit)="crearPaquete()" border="1">
-    <br>
-    <mat-form-field>
-        <textarea matInput placeholder="Destino" required formControlName="destino"></textarea>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <textarea matInput placeholder="Descripcion" required formControlName="descripcion"></textarea>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <textarea matInput placeholder="Precio" required formControlName="precio"></textarea>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <textarea matInput placeholder="Guia" required formControlName="guia" type="date"></textarea>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <textarea matInput placeholder="Imagen" required formControlName="img_url"></textarea>
-    </mat-form-field>
-    <br>
+                <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
+            </form>
+        </mat-card-content>
 
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" formControlName="fechaPartida" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker (closed)="verificarCierre()"></mat-datepicker>
-    </mat-form-field>
-    <br>
-
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
-</form>
-
-<br>
-<div align="center">
-    <button mat-raised-button color="primary" routerLink="/paquetes/lista">Listar Paquetes</button>
-    <br>
-    <br>
-    <button mat-raised-button color="primary" (click)="reiniciarForm()">Reiniciar Formulario</button>
-</div>
+        <br>
+        <div align="center">
+            <button mat-raised-button color="primary" routerLink="/paquetes/lista">Listar Paquetes</button>
+            <br>
+            <br>
+            <button mat-raised-button color="primary" (click)="reiniciarForm()">Reiniciar Formulario</button>
+        </div>
+ 
+    </mat-card>
+</mat-grid-list>

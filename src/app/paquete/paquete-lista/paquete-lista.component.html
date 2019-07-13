@@ -16,7 +16,7 @@
         <input matInput type="text" placeholder="Busca Paquetes" [(ngModel)]="elementoBusqueda"
             (ngModelChange)="buscarElementos()">
         <button mat-button *ngIf="elementoBusqueda" matSuffix mat-icon-button aria-label="Clear"
-            (click)="elementoBusqueda=''">
+            (click)="elementoBusqueda" >
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
